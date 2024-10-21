@@ -630,7 +630,6 @@ function downloadExcel() {
 
     if (!document.getElementById('resultContainer').classList.contains('hidden') && document.getElementById('resultsTable').rows.length > 1) {
         tableId = 'resultsTable';
-        // Check if it's the average citations table
         if (document.querySelector('input[name="citationSource"]:checked').value === 'average') {
             fileName = 'Average_Citations_Data.xlsx';
         } else {
