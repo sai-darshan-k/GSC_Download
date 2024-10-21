@@ -72,9 +72,9 @@ def parse_scopus_papers(response_json):
         for entry in entries:
             paper = {
                 'title': entry.get('dc:title'),
-                'year': entry.get('prism:coverDate', '')[:4],  # Extract year from date
+                'year': entry.get('prism:coverDate', '')[:4], 
                 'citations': entry.get('citedby-count'),
-                'link': entry.get('prism:doi')  # Using DOI as link
+                'link': entry.get('prism:doi')
             }
             papers.append(paper)
     return papers
@@ -113,7 +113,6 @@ def fetch_google_scholar_data(gscholar_link):
     else:
         print(f"Error fetching Google Scholar data from {gscholar_link}: Status code {response.status_code}")
         return None, None, None, None
-
 
 def fetch_yearly_citations(gscholar_link):
     headers = {
@@ -247,11 +246,6 @@ def generate_report():
         ("55079543700", "Dr ANITA H B", "https://scholar.google.com/citations?user=-ZYIiGAAAAAJ&hl=en"),
         ("35737586100", "Dr AROKIA PAUL RAJAN R", "https://scholar.google.com/citations?hl=en&user=5Dl7tEYAAAAJ"),
         ("57189239708", "Dr ASHOK IMMANUEL V", "https://scholar.google.co.in/citations?user=px8Z3Q4AAAAJ&hl=en"),
-        ("55881946700", "Dr BEAULAH SOUNDARABAI P", "https://scholar.google.co.in/citations?user=jTCHV4kAAAAJ&hl=en"),
-        ("57044254900", "Dr CECIL DONALD A", "https://scholar.google.co.in/citations?user=_bbxYHsAAAAJ&hl=en&authuser=1"),
-        ("57055221400", "Dr CHANDRA J", "https://scholar.google.com/citations?user=bn6WQUoAAAAJ"),
-        ("59256484700", "Dr CYNTHIA T", "https://scholar.google.com/citations?hl=en&user=ThELNO0AAAAJ"),
-        ("57162822500", "Dr DEEPA V JOSE", "https://scholar.google.co.in/citations?user=ryhyx4IAAAAJ&hl=en"),
     ]
 
     # Handle fetching Google Scholar paper details
